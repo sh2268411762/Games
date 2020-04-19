@@ -1,0 +1,2 @@
+D:\git Code\Games\三子棋（新）\Debug\三子棋（新）.exe
+D:\git Code\Games\三子棋（新）\Debug\三子棋（新）.pdb
