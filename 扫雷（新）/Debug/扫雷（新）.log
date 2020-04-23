@@ -1,0 +1,8 @@
+﻿  test.c
+D:\git Code\Games\扫雷（新）\test.c(8,1): warning C4005: “ROW”: 宏重定义
+D:\git Code\Games\扫雷（新）\test.c(4): message : 参见“ROW”的前一个定义
+D:\git Code\Games\扫雷（新）\test.c(9,1): warning C4005: “ROW”: 宏重定义
+D:\git Code\Games\扫雷（新）\test.c(8): message : 参见“ROW”的前一个定义
+  扫雷（新）.c
+  正在生成代码...
+  扫雷（新）.vcxproj -> D:\git Code\Games\扫雷（新）\Debug\扫雷（新）.exe
