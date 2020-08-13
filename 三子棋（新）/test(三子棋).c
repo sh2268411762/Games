@@ -1,20 +1,18 @@
-ï»¿//#include <stdio.h>
-//#include <stdlib.h>
-//#include <string.h>
-//#include <time.h>
+//#include "chess.h"
 //
-//#define ROW  3
-//#define COL  3
 //void menu()
 //{
+//	printf("**********************************************\n");
+//	printf("***************  »¶Ó­À´µ½Èı×ÓÆå  *************\n");
 //	printf("**********************************************\n");
 //	printf("************      1. play    *****************\n");
 //	printf("************      0. exit    *****************\n");
 //	printf("**********************************************\n");
 //}
+//
 //void InitBoard(char board[ROW][COL], int row, int col)
 //{
-//	int i = 0;
+//	/*int i = 0;
 //	int j = 0;
 //	for (i = 0; i < row; i++)
 //	{
@@ -22,9 +20,10 @@
 //		{
 //			board[i][j] = ' ';
 //		}
-//	}
-//	//memset(&board[0][0],' ',row*col*sizeof(board[0][0]));
+//	}*/
+//	memset(&board[0][0],' ',row*col*sizeof(board[0][0]));
 //}
+//
 //void DisplayBoard(char board[ROW][COL], int row, int col)
 //{
 //	/*int i = 0;
@@ -65,11 +64,12 @@
 //	}
 //
 //}
+//
 //void ComputerMove(char board[ROW][COL], int row, int col)
 //{
 //	int x = 0;
 //	int y = 0;
-//	printf("ç”µè„‘èµ°:-->\n\n");
+//	printf("µçÄÔ×ß:-->\n\n");
 //	while (1)
 //	{
 //		x = rand() % row;
@@ -81,14 +81,15 @@
 //		}
 //	}
 //}
+//
 //void PlayerMove(char board[ROW][COL], int row, int col)
 //{
 //	int x = 0;
 //	int y = 0;
-//	printf("ç©å®¶èµ°:-->\n\n");
+//	printf("Íæ¼Ò×ß:-->\n\n");
 //	while (1)
 //	{
-//		printf("è¯·è¾“å…¥åæ ‡ï¼š-->\n");
+//		printf("ÇëÊäÈë×ø±ê£º-->\n");
 //		(void)scanf("%d%d", &x, &y);
 //		if (x >= 1 && x <= row && y >= 1 && y <= col)
 //		{
@@ -99,15 +100,16 @@
 //			}
 //			else
 //			{
-//				printf("åæ ‡è¢«å ç”¨ï¼Œè¯·é‡æ–°è¾“å…¥:-->\n");
+//				printf("×ø±ê±»Õ¼ÓÃ£¬ÇëÖØĞÂÊäÈë:-->\n");
 //			}
 //		}
 //		else
 //		{
-//			printf("åæ ‡éæ³•ï¼Œè¯·é‡æ–°è¾“å…¥:-->\n");
+//			printf("×ø±ê·Ç·¨£¬ÇëÖØĞÂÊäÈë:-->\n");
 //		}
 //	}
 //}
+//
 //int IsFull(char board[ROW][COL], int row, int col)
 //{
 //	int i = 0;
@@ -116,39 +118,40 @@
 //	{
 //		for (j = 0; j < col; j++)
 //		{
-//			if (board[i][j] ==' ')
-//			return 0;
+//			if (board[i][j] == ' ')
+//				return 0;
 //		}
 //
 //	}
 //	return 1;
 //}
+//
 //char IsWin(char board[ROW][COL], int row, int col)
 //{
 //	int i = 0;
-//		for (i = 0; i < row; i++)
+//	for (i = 0; i < row; i++)
+//	{
+//		if (board[i][0] == board[i][1] && board[i][1] == board[i][2] && board[i][0] != ' ')
 //		{
-//			if (board[i][0] == board[i][1] && board[i][1] == board[i][2] && board[i][0] != ' ')
-//			{
-//				return board[i][0];
-//			}
+//			return board[i][0];
 //		}
-//		for (i = 0; i < col; i++)
+//	}
+//	for (i = 0; i < col; i++)
+//	{
+//		if (board[0][i] == board[1][i] && board[1][i] == board[2][i] && board[0][i] != ' ')
 //		{
-//			if (board[0][i] == board[1][i] && board[1][i] == board[2][i] && board[0][i] != ' ')
-//			{
-//				return board[0][i];
-//			}
+//			return board[0][i];
 //		}
-//		if (board[0][0] == board[1][1] && board[2][2] == board[1][1] && board[1][1] != ' ')
-//		{
-//			return board[1][1];
-//		}
-//		if (board[0][2] == board[1][1] && board[1][1] == board[2][0] && board[1][1] != ' ')
-//		{
-//			return board[1][1];
-//		}
-//	//è¯´æ˜æ²¡æœ‰èµ¢,åˆ¤æ–­å¹³å±€
+//	}
+//	if (board[0][0] == board[1][1] && board[2][2] == board[1][1] && board[1][1] != ' ')
+//	{
+//		return board[1][1];
+//	}
+//	if (board[0][2] == board[1][1] && board[1][1] == board[2][0] && board[1][1] != ' ')
+//	{
+//		return board[1][1];
+//	}
+//	//ËµÃ÷Ã»ÓĞÓ®,ÅĞ¶ÏÆ½¾Ö
 //	if (IsFull(board, row, col))// == 1
 //	{
 //		return 'Q';
@@ -158,21 +161,21 @@
 //
 //void game()
 //{
-//	//printf("ç©æ¸¸æˆ\n");
+//	//printf("ÍæÓÎÏ·\n");
 //	char board[ROW][COL] = { 0 };
 //	char ret = 0;
-//	InitBoard(board, ROW, COL);
-//	DisplayBoard(board, ROW, COL);
+//	InitBoard(board, ROW, COL);//µçÄÔ
+//	DisplayBoard(board, ROW, COL);//Íæ¼Ò
 //	while (1)
 //	{
-//		ComputerMove(board, ROW, COL);
+//		ComputerMove(board, ROW, COL);//µçÄÔÒÆ¶¯
 //		ret = IsWin(board, ROW, COL);
 //		if (ret != ' ')
 //		{
 //			break;
 //		}
 //		DisplayBoard(board, ROW, COL);
-//		PlayerMove(board, ROW, COL);
+//		PlayerMove(board, ROW, COL);//Íæ¼ÒÒÆ¶¯
 //		ret = IsWin(board, ROW, COL);
 //		if (ret != ' ')
 //		{
@@ -182,48 +185,15 @@
 //	}
 //	if (ret == 'X')
 //	{
-//		printf("ç”µè„‘èµ¢ï¼\n\n");
+//		printf("µçÄÔÓ®£¡\n\n");
 //	}
 //	else if (ret == '0')
 //	{
-//		printf("ç©å®¶èµ¢ï¼\n\n");
+//		printf("Íæ¼ÒÓ®£¡\n\n");
 //	}
 //	else if (ret == 'Q')
 //	{
-//		printf("å¹³å±€ï¼\n\n");
+//		printf("Æ½¾Ö£¡\n\n");
 //	}
 //	DisplayBoard(board, ROW, COL);
-//
 //}
-//int main()
-//{
-//	int input = 0;
-//	srand((unsigned int)time(NULL));
-//	do {
-//		menu();
-//
-//		printf("è¯·é€‰æ‹©ï¼š-->\n");
-//		(void)scanf("%d", &input);
-//
-//		switch (input)
-//		{
-//		case 1:
-//			game();
-//			break;
-//
-//		case 0:
-//			printf("é€€å‡º\n");
-//			break;
-//
-//		default:
-//			printf("é€‰æ‹©é”™è¯¯ï¼Œé‡æ–°é€‰æ‹©\n");
-//			break;
-//		}
-//	} while (input);
-//	return 0;
-//}
-////IsWin
-////'X'  ç”µè„‘
-////'0'   ç©å®¶
-////'Q'   å¹³å±€
-////' '   ç»§ç»­
